@@ -89,6 +89,41 @@ class W25Q512JV(SpiNorFlashModule):
     ]
     dummy_bits = 8
 
+class W25Q16JV(SpiNorFlashModule):
+    """W25Q16JV
+
+    Datasheet: https://www.winbond.com/resource-files/w25q16jv%20spi%20revh%2004082019%20plus.pdf
+    """
+
+    manufacturer_id = SpiNorFlashManufacturerIDs.WINBOND
+    device_id = 0x4015
+    name = "w25q16jv"
+
+    total_size  =   2097152   # bytes
+    page_size   =       256   # bytes
+    total_pages =      8192
+
+    supported_opcodes = [
+        SpiNorFlashOpCodes.READ_1_1_1,
+        SpiNorFlashOpCodes.READ_1_1_1_4B,
+        SpiNorFlashOpCodes.READ_1_1_1_FAST,
+        SpiNorFlashOpCodes.READ_1_1_1_FAST_4B,
+        SpiNorFlashOpCodes.READ_1_1_2,
+        SpiNorFlashOpCodes.READ_1_1_2_4B,
+        SpiNorFlashOpCodes.READ_1_2_2,
+        SpiNorFlashOpCodes.READ_1_2_2_4B,
+        SpiNorFlashOpCodes.READ_1_1_4,
+        SpiNorFlashOpCodes.READ_1_1_4_4B,
+        SpiNorFlashOpCodes.READ_1_4_4,
+        SpiNorFlashOpCodes.READ_1_4_4_4B,
+        SpiNorFlashOpCodes.PP_1_1_1,
+        SpiNorFlashOpCodes.PP_1_1_1_4B,
+        SpiNorFlashOpCodes.PP_1_1_4,
+        SpiNorFlashOpCodes.PP_1_1_4_4B,
+    ]
+    dummy_bits = 8
+
+
 
 class W74M64FV(SpiNorFlashModule):
     """W74M64FV
